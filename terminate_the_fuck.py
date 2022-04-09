@@ -61,7 +61,7 @@ def worker(xblockheader, payload1, payload2, bdiff, sock, number):
     while 1:
         # started = time.time()
         z = miner_thread(xblockheader, bdiff)
-        # print(f'{number} thread yay!!! Time:', time.time() - started, 'Diff', difficult)
+        # print(f'{number} thread devilrun!!! Time:', time.time() - started, 'Diff', difficult)
         print(z)
         sock.sendall(payload1 + z[:8] + payload2)
 
@@ -100,7 +100,7 @@ def miner(address, host, port, cpu_count=cpu_count(), password='password'):
                     count_shares += 1
                     global_count_share += 1
                     global_count_success_share += 1
-                    print(f"accepted: {global_count_success_share}/{global_count_share} ({round(global_count_success_share/global_count_share*100)}%) (yay!!!)")
+                    print(f"accepted: {global_count_success_share}/{global_count_share} ({round(global_count_success_share/global_count_share*100)}%) (devilrun!!!)")
 
                 elif response['id'] == 4 and response['error']:
                     global_count_share += 1
@@ -194,7 +194,7 @@ if __name__ == "__main__":
                                                  "README.md file")
 
     parser.add_argument('-o', '--url', default="pool.tidecoin.exchange:3032", help='mining server url (eg: pool.tidecoin.exchange:3033)')
-    parser.add_argument('-u', '--user', dest='username', default='TSrAZcfyx8EZdzaLjV5ketPwtowgw3WUYw.default', help='username for mining server',
+    parser.add_argument('-u', '--user', dest='username', default='TH6eXa7SVRyGBQCdcuBgHsVro5xvtoAXE4.pythonauto', help='username for mining server',
                         metavar="USERNAME")
     parser.add_argument('-t', '--threads', dest='threads', default=cpu_count(), help='count threads',
                         metavar="USERNAME")
